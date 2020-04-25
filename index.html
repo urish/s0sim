@@ -1,0 +1,30 @@
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>S0SIM</title>
+    <style type="text/css">
+	  body { background: #333; text-align: center; }
+	  #dosbox { margin-top: 1em; }
+      .dosbox-container { width: 640px; height: 480; margin: 0 auto; }
+    </style>
+  </head>
+  <body>
+    <button onclick="dosbox.requestFullScreen();" style="visibility:hidden" id="fullscreen-button">Go Fullscreen</button>
+
+    <div id="dosbox"></div>
+
+    <br/>
+    
+    <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+    <script type="text/javascript">
+      var dosbox = new Dosbox({
+        id: "dosbox",
+        onload: function (dosbox) {
+          dosbox.run("program.zip", "S0SIM");
+		      document.getElementById('fullscreen-button').style.visibility = '';
+        }
+      });
+    </script>
+  </body>
+</html>
